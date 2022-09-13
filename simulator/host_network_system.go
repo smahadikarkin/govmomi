@@ -200,10 +200,10 @@ func (s *HostNetworkSystem) UpdateNetworkConfig(req *types.UpdateNetworkConfig) 
 func (s *HostNetworkSystem) QueryNetworkHint(req *types.QueryNetworkHint) soap.HasFault {
 	var info []types.PhysicalNicHintInfo
 
-	nic := s.QueryNetworkHintResponse.Returnval
+	nics := s.QueryNetworkHintResponse.Returnval
 
-	if nic != nil {
-		for _, nic := range nic {
+	if nics != nil {
+		for _, nic := range nics {
 			info = append(info, types.PhysicalNicHintInfo{
 				Device:              nic.Device,
 				Subnet:              nic.Subnet,
