@@ -202,7 +202,7 @@ func (s *HostNetworkSystem) QueryNetworkHint(req *types.QueryNetworkHint) soap.H
 
 	nic := s.QueryNetworkHintResponse.Returnval
 
-	if nics != nil {
+	if nic != nil {
 		for _, nic := range nic {
 			info = append(info, types.PhysicalNicHintInfo{
 				Device:              nic.Device,
